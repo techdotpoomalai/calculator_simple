@@ -1,0 +1,191 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>calculater</title>
+		
+		<style>
+			.body
+				{
+				width:50%;
+				border-radius:15px;
+				height:500x;
+				background-color:#808080;
+				margin:10px;
+				padding:15px;
+				}
+			.display
+				{
+				width:100%;
+				height:20%;
+				text-align:right;
+				font-size:25px;
+				background-color:#f2f2f2;
+				border-radius:10px;
+				color:red;
+				}
+			.button
+				{
+				width:20%;
+				height:15%;
+				font-size:18px;
+				}
+			.button:hover
+				{
+					background-color:#3cfde9;
+				}
+		</style>
+	</head>
+	
+	<body style="padding-left:30%;">
+		<div class="body">
+			<table>
+				
+				<input type="text" value=" " id="display" class="display" ><br><br>
+				<input type="button" value="1" id="" class="button" onclick="input(1)" >
+				<input type="button" value="2" id="" class="button" onclick="input(2)">
+				<input type="button" value="3" id="" class="button"onclick="input(3)">
+				<input type="button" value="C" id="" class="button" onclick="input('clear')">
+				<input type="button" value="+" id="" class="button" onclick="input('+')">
+				<input type="button" value="4" id="" class="button" onclick="input(4)">
+				<input type="button" value="5" id="" class="button" onclick="input(5)">
+				<input type="button" value="6" id="" class="button" onclick="input(6)">
+				<input type="button" value="x!" id="" class="button" onclick="input('!')">
+				<input type="button" value="-" id="" class="button" onclick="input('-')">
+				<input type="button" value="7" id="" class="button" onclick="input(7)">
+				<input type="button" value="8" id="" class="button" onclick="input(8)">
+				<input type="button" value="9" id="" class="button" onclick="input(9)">
+				<input type="button" value="%" id="" class="button" onclick="input('%')">
+				<input type="button" value="*" id="" class="button" onclick="input('*')">
+				<input type="button" value="CA" id="" class="button"onclick="input('ca')">
+				<input type="button" value="0" id="" class="button" onclick="input(0)">
+				<input type="button" value="." id="" class="button" onclick="input('.')">
+				<input type="button" value="=" id="" class="button" onclick="slove()">
+				<input type="button" value="/" id="" class="button" onclick="input('/')">
+				
+				<!-- <input type="button" value="(" id="" class="button" onclick="input('(')"> -->
+				<!-- <input type="button" value=")" id="" class="button"onclick="input(')')"> -->
+				<!-- <input type="button" value="%" id="" class="button"onclick="input('%')"> -->
+				<!-- <input type="button" value="=" id="" class="button" onclick="slove()"> -->
+				<!-- <input type="button" value="/" id="" class="button" onclick="input('/')"> -->
+				
+			</table>
+		</div>
+	</body>
+	
+	<script>
+		function input(val)
+				{
+				<!-- alert(val); -->
+					<!-- if(val=="clear") -->
+						<!-- { -->
+				
+						<!-- } -->
+				if(val=="clear")
+						{
+							bks();
+						}
+				else if(val=="ca")
+						{
+									document.getElementById("display").value = "";
+						}
+				else
+						{	
+							
+								document.getElementById("display").value+=val;
+							
+						}
+				}
+		function bks()
+				{
+					
+					var x = document.getElementById("display").value ;
+					var y = document.getElementById("display").value=x.slice(0,-1);
+				}
+		
+		function slove()
+		
+				{
+					<!-- alert("hiiii"); -->
+					var x = document.getElementById("display").value ;
+					z=weather(x)
+					let y = eval(z) ; 
+					document.getElementById("display").value = y ;
+				}
+		function weather(z)
+				{
+				var t=z;
+				<!-- var split=t.split(""); -->
+				var length=t.length;
+				
+				<!-- var m=t.split(""); -->
+				var end=length-1;
+				var vb=end+1;
+				var fact=t.slice(0,end);
+				var sli=t.slice(end,vb);
+				<!-- alert(sli); -->
+				if(sli=="!")
+					{
+						var temp=fun(fact);
+						return temp;
+					}
+				else
+					{
+					return z;
+					}
+				
+				<!-- if(m=="l") -->
+					<!-- { -->
+						<!-- alert("okk"); -->
+						<!-- var length=t.length; -->
+						<!-- alert(length); -->
+						<!-- var lice=t.slice(4,length); -->
+						<!-- alert(lice); -->
+						<!-- var value=math.log(2); -->
+						<!-- alert(value); -->
+					<!-- } -->
+				<!-- else -->
+					<!-- { -->
+					<!-- alert(t) -->
+					<!-- return t; -->
+					<!-- } -->
+				<!-- return o; -->
+				<!-- if() -->
+				}
+		function fun(fact)
+				{
+				
+				q=fact;
+				var i;
+				var ans=1;
+				for(i=1;i<=q;i++)
+					{
+					
+					ans=ans*i;
+					<!-- alert(ans); -->
+					
+					}
+				return ans;
+				<!-- alert(ans); -->
+				}
+		<!-- function color(this) -->
+				<!-- { -->
+				<!-- this.style.color="red"; -->
+				<!-- } -->
+		<!-- function setColor(btn, color) -->
+				<!-- { -->
+					<!-- var count=1; -->
+					<!-- var property = document.getElementById(btn); -->
+					<!-- if (count == 0) -->
+					<!-- { -->
+						<!-- property.style.backgroundColor = "#FFFFFF" -->
+						<!-- count=1;         -->
+					<!-- } -->
+					<!-- else -->
+					<!-- { -->
+						<!-- property.style.backgroundColor = "#7FFF00" -->
+						<!-- count=0; -->
+					<!-- } -->
+
+				
+	</script>
+</html>
